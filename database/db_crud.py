@@ -54,7 +54,12 @@ class DataBase:
 
     #Layer 2: CRUD methods for data
 
-    def create_data(self, *, file_path: str, data: Any) -> None:
+    def create_data(self, *, file_path: str, data: Any) -> int:
+        """
+        Creates data in JSON file and returns index of this data
+        """
+
+        old_id: int = self.max_id
 
         self.load_data(file_path=file_path)
 
@@ -63,7 +68,12 @@ class DataBase:
 
         self.commit(file_path=file_path)
 
+        return old_id
+
     def read_data(self, *, file_path: str, data_id: int) -> Any:
+        """
+        Returns readed data of index in database JSON file
+        """
 
         try:
             self.load_data(file_path=file_path)
@@ -75,6 +85,9 @@ class DataBase:
             return None
     
     def update_data(self, *, file_path: str, data_id: int, new_data: Any) -> Any:
+        """
+        Returns updated data of index in database JSON file
+        """
 
         try:
             self.load_data(file_path=file_path)
@@ -86,6 +99,9 @@ class DataBase:
             return None
     
     def delete_data(self, *, file_path: str, data_id: int) -> None:
+        """
+        Returns deleted data of index in database JSON file
+        """
 
         try:
             self.load_data(file_path=file_path)

@@ -14,7 +14,7 @@ export const configRegistry = {
         },
     },
     DATABASE: {
-        users: "users.json",
+        users: "database/users.json",
     },
     ENDPOINTS: {
         index: "/",
@@ -22,14 +22,26 @@ export const configRegistry = {
         methodologic: "/methodologic",
     },
     WIDGETS: {
-        INPUTS: {
-            authNameInput: "auth-name-input",
-            authPasswordInput: "auth-password-input",
+        INDEX_PAGE: {
+            INPUTS: {
+                authNameInput: "auth-name-input",
+                authPasswordInput: "auth-password-input",
+            },
+            BUTTONS: {
+                setStudentStatusButton: "set-student-status-button",
+                setTeacherStatusButton: "set-teacher-status-button",
+                signUpButton: "sign-up-button",
+            },
         },
-        BUTTONS: {
-            setStudentStatusButton: "set-student-status-button",
-            setTeacherStatusButton: "set-teacher-status-button",
-            signUpButton: "sign-up-button",
+        METHODOLOGIC_PAGE: {
+            TEXTLABELS: {
+                userId: "user-id",
+                userStatus: "user-status",
+            },
+            USER_INFO: {
+                userId: "user-id",
+                userStatus: "user-status",
+            },
         },
     },
 }

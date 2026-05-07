@@ -3,20 +3,23 @@ from database.db_crud import db
 from typing import Any
 
 auth_registry: dict[str, Any] = {
-    "sign_up": db.create_data, 
+    "sign_up": [db.create_data, db.read_data]
 }
 
 class Auth(Enum):
     AUTH_TYPE = "auth_type"
     FILE_PATH = "file_path"
-    USER_DATA = "user_data"
+    USER_DB_DATA = "user_db_data"
+    STATUS = "status"
 
 class Endpoints(Enum):
     INDEX = "/"
     AUTH = "/auth"
+    METHODOLOGIC = "/methodologic"
 
 class Templates(Enum):
     INDEX = "index.html"
+    METHODOLOGIC = "methodologic.html"
 
 class DatabaseFileNames(Enum):
     LESSONS = "database/lessons.json"
