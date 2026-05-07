@@ -10,6 +10,7 @@ class DataBase:
         self.encoding: str = "utf-8"
         self.indent: int = 4
         self.ensure_ascii = False
+        self.max_id: int = 0
 
         self.db: dict = {}
 
@@ -27,7 +28,6 @@ class DataBase:
         Removes JSON file. 
         """
         file_to_remove: Path = Path(file_path)
-
         file_to_remove.unlink(missing_ok=True)
 
     def load_data(self, *, file_path: str) -> None:
@@ -52,28 +52,14 @@ class DataBase:
             with open(file=file_path, mode=self.writing_mode, encoding=self.encoding) as db_file:
                 dump(obj=data, fp=db_file, indent=self.indent, ensure_ascii=self.ensure_ascii)
 
-    #Layer 2: Advanced methods of database
-
-    def get_unique_index_of_data_in_database_file(self, *, file_path: str) -> int:
-        """
-        Gets index of data in database file.
-        """
-
-        with open(file=file_path, mode=self.reading_mode, encoding=self.encoding) as db_file:
-            self.load_data(file_path=file_path)
-
-            database_length: int = len(self.db)
-            return database_length
-
-    #Layer 3: CRUD methods for data
+    #Layer 2: CRUD methods for data
 
     def create_data(self, *, file_path: str, data: Any) -> None:
 
         self.load_data(file_path=file_path)
 
-        index: str = str(self.get_unique_index_of_data_in_database_file(file_path=file_path))
-
-        self.db[index] = data
+        self.db[self.max_id] = data
+        self.max_id += 1
 
         self.commit(file_path=file_path)
 
