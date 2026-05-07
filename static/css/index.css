@@ -1,0 +1,76 @@
+/* Auth classes */
+
+.authentication {
+    border: 8px solid darkblue;
+    border-radius: 16px;
+    background-color: white;
+}
+
+.authentication p {
+    font-family: Arial;
+    font-size: 32px;
+    color: blue;
+    text-shadow: 2px 2px 4px darkblue;
+    text-align: center;
+}
+
+.authentication ul {
+    list-style-type: none;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.authentication ul li input {
+    font-size: 32px;
+}
+
+.sign-up-button {
+    border: 8px solid darkblue;
+    border-radius: 16px;
+    background-color: blue;
+    font-family: Arial;
+    color: white;
+    font-size: 32px;
+    text-align: center;
+}
+
+.sign-up-button:hover {
+    scale: 1.2;
+}
+
+.sign-up-button:focus {
+    color: darkgreen;
+    border-color: green;
+    background-color: greenyellow;
+    text-shadow: 2px 2px 4px white;
+}
+
+/* User status classes */
+
+.user-status-ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.set-user-status-button {
+    border: 8px solid darkblue;
+    border-radius: 16px;
+    color: white;
+    background-color: blue;
+    font-family: Arial;
+    font-size: 32px;
+    text-shadow: 2px 2px 8px gray;
+}
+
+.set-user-status-button:hover {
+    scale: 1.2;
+}
+
+.set-user-status-button:focus {
+    color: darkgreen;
+    border-color: green;
+    background-color: greenyellow;
+    text-shadow: 2px 2px 4px white;
+}
