@@ -8,10 +8,6 @@
     <body>
         <header class="quantorium-header">
             <img src="{{ url_for('static', filename='images/QuantoriumLogo.png') }}" alt="QuantoriumLogo" width="200">
-            <div class="user-info-container">
-                <p class="user-info-text" id="user-id"><strong>ID</strong></p>
-                <p class="user-info-text" id="user-status"><strong>Статус</strong></p>
-            </div>
         </header>
         <div class="quantorium-methodologic-information-container">
             <div class="quantum-methodologic-information-container">
@@ -19,6 +15,5 @@
                 <button class="quantorium-button">Методическая информация</button>
             </div>
         </div>
-        <script type="module" src="{{ url_for('static', filename='js/showUserInfoInMethodologic.js') }}"></script>
     </body>
 </html>

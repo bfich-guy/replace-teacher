@@ -23,6 +23,11 @@
     scale: 1.2;
 }
 
+.quantorium-button:active {
+    scale: 1.0;
+    border-color: greenyellow;
+}
+
 .quantorium-methodologic-information-container {
     border: 8px solid darkblue;
     border-radius: 16px;

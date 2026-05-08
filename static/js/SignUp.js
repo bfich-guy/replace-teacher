@@ -2,9 +2,10 @@ import { configRegistry } from "/static/js/config.js";
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    const name = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.INPUTS.authNameInput);
-    const password = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.INPUTS.authPasswordInput);
     let status = "";
+
+    const signUpNameInput = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.INPUTS.signUpNameInput);
+    const signUpPasswordInput = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.INPUTS.signUpPasswordInput);
 
     const setStudentStatusButton = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.BUTTONS.setStudentStatusButton);
     const setTeacherStatusButton = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.BUTTONS.setTeacherStatusButton);
@@ -20,22 +21,25 @@ document.addEventListener("DOMContentLoaded", function() {
 
     signUpButton.addEventListener("click", function() {
 
-        const nameValue = name.value;
-        const passwordValue = password.value;
+        const signUpNameValue = signUpNameInput.value;
+        const signUpPasswordValue = signUpPasswordInput.value;
 
-        const nameValueAndPasswordValueAreNotNull = (nameValue && passwordValue)
+        const signUpDataIsNotNull = (signUpNameValue && signUpPasswordValue)
 
-        if (nameValueAndPasswordValueAreNotNull) {
-            fetch(configRegistry.ENDPOINTS.auth, {
+        if (signUpDataIsNotNull) 
+        {
+            fetch(configRegistry.ENDPOINTS.signUpEndpoint, 
+            {
                 headers: {"Content-type": "application/json"},
                 method: "POST",
                 body: JSON.stringify({
                     auth_type: configRegistry.AUTH.TYPE.sign_up,
                     file_path: configRegistry.DATABASE.users,
-                    user_db_data: {
-                        name: nameValue || null,
-                        password: passwordValue || null,
-                        status: status || null, 
+                    user_input_data: {
+                        name: signUpNameValue || null,
+                        password: signUpPasswordValue || null,
+                        status: status || null,
+                        unique_id: null,
                     }
                 })
             })
@@ -44,10 +48,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 const userId = responseData.user_id;
                 const userStatus = responseData.user_status;
 
-                localStorage.setItem(configRegistry.WIDGETS.METHODOLOGIC_PAGE.USER_INFO.userId, userId);
-                localStorage.setItem(configRegistry.WIDGETS.METHODOLOGIC_PAGE.USER_INFO.userStatus, userStatus);
-
-                window.location.href = "/methodologic";
+                window.location.href = configRegistry.ENDPOINTS.methodologicEndpoint;
             })
         }
     });

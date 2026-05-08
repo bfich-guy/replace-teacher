@@ -5,8 +5,8 @@ export const configRegistry = {
             password: "password", 
         },
         USER_STATUS: {
-            student: "student",
-            teacher: "teacher",
+            student: "Ученик",
+            teacher: "Учитель",
         },
         TYPE: {
             sign_up: "sign_up",
@@ -16,21 +16,32 @@ export const configRegistry = {
     DATABASE: {
         users: "database/users.json",
     },
+    HEADERS: {
+        contentTypeApplicationJSON: {"Content-type": "application/json"},
+    },
+    METHODS: {
+        POST: "POST",
+    },
     ENDPOINTS: {
-        index: "/",
-        auth: "/auth",
-        methodologic: "/methodologic",
+        indexEndpoint: "/",
+        signUpEndpoint: "/sign_up",
+        logInEndpoint: "/log_in",
+        methodologicEndpoint: "/methodologic",
     },
     WIDGETS: {
         INDEX_PAGE: {
             INPUTS: {
-                authNameInput: "auth-name-input",
-                authPasswordInput: "auth-password-input",
+                signUpNameInput: "sign-up-name-input",
+                signUpPasswordInput: "sign-up-password-input",
+                logInIdInput: "log-in-id-input",
+                logInNameInput: "log-in-name-input",
+                logInPasswordInput: "log-in-password-input",
             },
             BUTTONS: {
                 setStudentStatusButton: "set-student-status-button",
                 setTeacherStatusButton: "set-teacher-status-button",
                 signUpButton: "sign-up-button",
+                logInButton: "log-in-button",
             },
         },
         METHODOLOGIC_PAGE: {

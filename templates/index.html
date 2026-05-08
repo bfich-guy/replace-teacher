@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Регистрация | Кванториум </title>
+        <title>Аутентификация | Кванториум </title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     </head>
@@ -11,9 +11,9 @@
         </header>
         <div class="authentication">
             <p><strong>Регистрация</strong></p>
-            <ul>
-                <li><input type="text" id="auth-name-input" placeholder="Name"></li>
-                <li><input type="text" id="auth-password-input" placeholder="Password"></li>
+            <ul class="auth-list">
+                <li><input type="text" id="sign-up-name-input" placeholder="Name"></li>
+                <li><input type="text" id="sign-up-password-input" placeholder="Password"></li>
             </ul>
             <ul class="user-status-ul">
                 <li><button class="quantorium-button" id="set-student-status-button">Ученик</button></li>
@@ -23,6 +23,18 @@
                 <li><button class="quantorium-button" id="sign-up-button">Зарегистрироваться</button></li>
             </ul>
         </div>
-        <script type="module" src="{{ url_for('static', filename='js/Authentication.js') }}"></script>
+        <div class="authentication">
+            <p><strong>Вход</strong></p>
+            <ul class="auth-list">
+                <li><input type="text" id="log-in-id-input" placeholder="ID"></li>
+                <li><input type="text" id="log-in-name-input" placeholder="Name"></li>
+                <li><input type="text" id="log-in-password-input" placeholder="Password"></li>
+            </ul>
+            <ul>
+                <li><button class="quantorium-button" id="log-in-button">Войти</button></li>
+            </ul>
+        </div>
+        <script type="module" src="{{ url_for('static', filename='js/SignUp.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/LogIn.js') }}"></script>
     </body>
 </html>

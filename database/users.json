@@ -2,6 +2,13 @@
     "0": {
         "name": "Vahe",
         "password": "1234",
-        "status": "student"
+        "status": "Ученик",
+        "unique_id": "0"
+    },
+    "1": {
+        "name": "Mark",
+        "password": "5678",
+        "status": "Учитель",
+        "unique_id": "1"
     }
 }

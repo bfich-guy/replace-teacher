@@ -52,6 +52,12 @@ class DataBase:
             with open(file=file_path, mode=self.writing_mode, encoding=self.encoding) as db_file:
                 dump(obj=data, fp=db_file, indent=self.indent, ensure_ascii=self.ensure_ascii)
 
+    def get_max_id(self) -> int:
+        """
+        Returns maximum id of database
+        """
+        return self.max_id
+
     #Layer 2: CRUD methods for data
 
     def create_data(self, *, file_path: str, data: Any) -> int:
@@ -59,16 +65,16 @@ class DataBase:
         Creates data in JSON file and returns index of this data
         """
 
-        old_id: int = self.max_id
+        data_id: int = self.max_id
 
         self.load_data(file_path=file_path)
 
-        self.db[self.max_id] = data
+        self.db[data_id] = data
         self.max_id += 1
 
         self.commit(file_path=file_path)
 
-        return old_id
+        return data_id
 
     def read_data(self, *, file_path: str, data_id: int) -> Any:
         """
