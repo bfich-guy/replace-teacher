@@ -4,35 +4,36 @@ from typing import Any
 
 auth_registry: dict[str, dict[str, Any]] = {
     "sign_up": {
-        "get_max_id": db.get_max_id,
-        "create_data": db.create_data,
+        "read_primary_key": db.read_primary_key,
+        "create_data_in_database_file": db.create_data_in_database_file,
     },
 
     "log_in": {
-        "read_data": db.read_data,
+        "read_data_from_database_file": db.read_data_from_database_file,
     },
 }
 
-class Status(Enum):
+class HTTPStatus(Enum):
     SUCCESS = ({"status": "success"}, 200)
     FORBIDDEN = ({"status": "forbidden"}, 403)
 
-class Auth(Enum):
-    AUTH_TYPE = "auth_type"
-    FILE_PATH = "file_path"
-    USER_INPUT_DATA = "user_input_data"
-    UNIQUE_ID = "unique_id"
-    STATUS = "status"
-
 class Endpoints(Enum):
     INDEX = "/"
+
     SIGN_UP = "/sign_up"
     LOG_IN = "/log_in"
+
     METHODOLOGIC = "/methodologic"
+    INDUSTRIAL_ROBOTICS = "/industrial_robotics"
+
+    PROFILE = "/profile"
 
 class Templates(Enum):
     INDEX = "index.html"
     METHODOLOGIC = "methodologic.html"
+    PROFILE = "profile.html"
+    
+    INDUSTRIAL_ROBOTICS = "methodologic/industrial_robotics.html"
 
 class User:
     def __init__(self, *,

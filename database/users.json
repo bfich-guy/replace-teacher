@@ -6,9 +6,9 @@
         "unique_id": "0"
     },
     "1": {
-        "name": "Mark",
-        "password": "5678",
-        "status": "Учитель",
+        "name": "Vahe",
+        "password": "1234",
+        "status": "Ученик",
         "unique_id": "1"
     }
 }

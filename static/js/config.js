@@ -15,6 +15,7 @@ export const configRegistry = {
     },
     DATABASE: {
         users: "database/users.json",
+        lessons: "database/lessons.json"
     },
     HEADERS: {
         contentTypeApplicationJSON: {"Content-type": "application/json"},
@@ -27,6 +28,7 @@ export const configRegistry = {
         signUpEndpoint: "/sign_up",
         logInEndpoint: "/log_in",
         methodologicEndpoint: "/methodologic",
+        industrialRoboticsEndpoint: "/industrial_robotics",
     },
     WIDGETS: {
         INDEX_PAGE: {
@@ -53,6 +55,16 @@ export const configRegistry = {
                 userId: "user-id",
                 userStatus: "user-status",
             },
+            BUTTONS: {
+                industrialRoboticsRedirectButton: "industrial-robotics-redirect-button",
+            }
         },
     },
+    MESSAGES: {
+        userNotFoundAlertMessage: "Данного пользователя не существует, зарегистрируйтесь!"
+    },
+    STATUS_CODES: {
+        success: "success",
+        forbidden: "forbidden"
+    }
 }

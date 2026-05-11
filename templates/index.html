@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Аутентификация | Кванториум </title>
+        <title>Аутентификация | Замена учителя </title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
     </head>
@@ -9,32 +9,37 @@
         <header class="quantorium-header">
             <img src="{{ url_for('static', filename='images/QuantoriumLogo.png') }}" alt="QuantoriumLogo" width="200">
         </header>
-        <div class="authentication">
-            <p><strong>Регистрация</strong></p>
-            <ul class="auth-list">
-                <li><input type="text" id="sign-up-name-input" placeholder="Name"></li>
-                <li><input type="text" id="sign-up-password-input" placeholder="Password"></li>
-            </ul>
-            <ul class="user-status-ul">
-                <li><button class="quantorium-button" id="set-student-status-button">Ученик</button></li>
-                <li><button class="quantorium-button" id="set-teacher-status-button">Учитель</button></li>
-            </ul>
-            <ul>
-                <li><button class="quantorium-button" id="sign-up-button">Зарегистрироваться</button></li>
-            </ul>
-        </div>
-        <div class="authentication">
-            <p><strong>Вход</strong></p>
-            <ul class="auth-list">
-                <li><input type="text" id="log-in-id-input" placeholder="ID"></li>
-                <li><input type="text" id="log-in-name-input" placeholder="Name"></li>
-                <li><input type="text" id="log-in-password-input" placeholder="Password"></li>
-            </ul>
-            <ul>
-                <li><button class="quantorium-button" id="log-in-button">Войти</button></li>
-            </ul>
-        </div>
-        <script type="module" src="{{ url_for('static', filename='js/SignUp.js') }}"></script>
-        <script type="module" src="{{ url_for('static', filename='js/LogIn.js') }}"></script>
+        <main>
+            <div class="authentication">
+                <p><strong>Регистрация</strong></p>
+                <ul class="auth-list">
+                    <li><input type="text" id="sign-up-name-input" placeholder="Name"></li>
+                    <li><input type="text" id="sign-up-password-input" placeholder="Password"></li>
+                </ul>
+                <ul class="user-status-ul">
+                    <li><button class="quantorium-button" id="set-student-status-button">Ученик</button></li>
+                    <li><button class="quantorium-button" id="set-teacher-status-button">Учитель</button></li>
+                </ul>
+                <ul>
+                    <li><button class="quantorium-button" id="sign-up-button">Зарегистрироваться</button></li>
+                </ul>
+            </div>
+            <div class="authentication">
+                <p><strong>Вход</strong></p>
+                <ul class="auth-list">
+                    <li><input type="text" id="log-in-id-input" placeholder="ID"></li>
+                    <li><input type="text" id="log-in-name-input" placeholder="Name"></li>
+                    <li><input type="text" id="log-in-password-input" placeholder="Password"></li>
+                </ul>
+                <ul>
+                    <li><button class="quantorium-button" id="log-in-button">Войти</button></li>
+                </ul>
+            </div>
+        </main>
+        <footer class="quantorium-footer">
+            <p>Наша почта: vage09inboxru@mail.ru</p>
+        </footer>
+        <script type="module" src="{{ url_for('static', filename='js/Authentication/SignUp.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/Authentication/LogIn.js') }}"></script>
     </body>
 </html>

@@ -1,7 +1,25 @@
+.quantorium-methodologic-information-container {
+    border: 8px solid darkblue;
+    border-radius: 16px;
+    background-color: whitesmoke;
+    padding: 16px;
+}
+
+.quantum-methodologic-information-container {
+    border: 8px solid darkblue;
+    border-radius: 16px;
+    background-color: white;
+    text-align: center;
+    padding-bottom: 32px;
+}
+
 .methodologic-header {
     font-family: Arial;
     font-size: 32px;
     color: blue;
+}
+
+.methodologic-header p {
     text-align: center;
     text-shadow: 2px 2px 4px gray;
 }
@@ -13,9 +31,13 @@
     gap: 25%;
 }
 
-.user-info-text {
+.methodologic-information {
     font-family: Arial;
     font-size: 32px;
-    color: white;
-    text-shadow: 2px 2px 4px gray;
+    color: blue;
+}
+
+.methodologic-information p {
+    text-align: center;
+    text-shadow: 2px 2px 4px gray
 }

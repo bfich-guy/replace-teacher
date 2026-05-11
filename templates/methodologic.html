@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Методическая информация для учителей | Кванториум</title>
+        <title>Методическая информация для учителей | Замена учителя</title>
         <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
         <link rel="stylesheet" href="{{ url_for('static', filename='css/methodologic.css') }}">
     </head>
@@ -9,11 +9,17 @@
         <header class="quantorium-header">
             <img src="{{ url_for('static', filename='images/QuantoriumLogo.png') }}" alt="QuantoriumLogo" width="200">
         </header>
-        <div class="quantorium-methodologic-information-container">
-            <div class="quantum-methodologic-information-container">
-                <p class="methodologic-header"><strong>Промробоквантум</strong></p>
-                <button class="quantorium-button">Методическая информация</button>
+        <main>
+            <div class="quantorium-methodologic-information-container">
+                <div class="quantum-methodologic-information-container">
+                    <p class="methodologic-header"><strong>Промробоквантум</strong></p>
+                    <button id="industrial-robotics-redirect-button" class="quantorium-button">Методическая информация</button>
+                </div>
             </div>
-        </div>
+        </main>
+        <footer class="quantorium-footer">
+            <p>Наша почта: vage09inboxru@mail.ru</p>
+        </footer>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/IndustrialRobotics.js') }}"></script>
     </body>
 </html>

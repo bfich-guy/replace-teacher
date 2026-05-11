@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", function() {
         {
             fetch(configRegistry.ENDPOINTS.signUpEndpoint, 
             {
-                headers: {"Content-type": "application/json"},
-                method: "POST",
+                headers: configRegistry.HEADERS.contentTypeApplicationJSON,
+                method: configRegistry.METHODS.POST,
                 body: JSON.stringify({
                     auth_type: configRegistry.AUTH.TYPE.sign_up,
                     file_path: configRegistry.DATABASE.users,

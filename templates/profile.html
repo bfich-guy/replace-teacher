@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Профиль | Замена учителя</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+    </head>
+    <body>
+        <header class="quantorium-header">
+            <img src="{{ url_for('static', filename='images/QuantoriumLogo.png') }}" alt="QuantoriumLogo" width="200">
+        </header>
+        <main>
+            <div class="user-profile">
+                <ul class="user-profile-data-list">
+                    <li><p class="user-profile-info">Имя: </p></li>
+                    <li><p class="user-profile-info">Статус: </p></li>
+                    <li><p class="user-profile-info">ID: </p></li>
+                </ul>
+            </div>
+            <div class="user-profile">
+                <ul class="user-profile-buttons">
+                    <li><button class="user-profile-button" id="user-profile-update-button">Обновить профиль</button></li>
+                    <li><button class="user-profile-button" id="user-profile-delete-button">Удалить профиль</button></li>
+                </ul>
+            </div>
+        </main>
+        <footer class="quantorium-footer">
+            <p>Наша почта: vage09inboxru@mail.ru</p>
+        </footer>
+    </body>
+</html>

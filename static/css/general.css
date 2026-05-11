@@ -1,9 +1,22 @@
+/* quantorium-header */
+
 .quantorium-header {
     border: 8px solid darkblue;
     border-radius: 16px;
     background-color: blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.quantorium-header p {
+    font-family: Arial;
+    color: white;
+    font-size: 32px;
     text-align: center;
 }
+
+/* quantorium-button */
 
 .quantorium-button {
     border: 8px solid darkblue;
@@ -25,20 +38,30 @@
 
 .quantorium-button:active {
     scale: 1.0;
-    border-color: greenyellow;
 }
 
-.quantorium-methodologic-information-container {
+/* quantum-header */
+
+.quantum-header {
     border: 8px solid darkblue;
     border-radius: 16px;
-    background-color: whitesmoke;
-    padding: 16px;
-}
-
-.quantum-methodologic-information-container {
-    border: 8px solid darkblue;
     background-color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+/* qunatum-footer */
+
+.quantorium-footer {
+    border: 8px solid darkblue;
     border-radius: 16px;
+    background-color: blue;;
+}
+
+.quantorium-footer p {
+    font-family: Arial;
+    color: white;
+    font-size: 32px;
     text-align: center;
-    padding-bottom: 32px;
 }

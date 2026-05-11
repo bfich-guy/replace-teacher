@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function() {
             .then(response => response.json())
             .then(responseData => {
 
-                const statusCodeIsSuccess = responseData.status === "success"; //Hardcode
+                const statusCodeIsSuccess = responseData.status === configRegistry.STATUS_CODES.success;
 
                 if (statusCodeIsSuccess) 
                 {
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 else
                 {
-                    alert("ТЫ КТО ВООБЩЕ ТАКОЙ?!");
+                    alert(configRegistry.MESSAGES.userNotFoundAlertMessage);
                 };
 
             });
