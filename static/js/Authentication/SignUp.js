@@ -4,19 +4,19 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let status = "";
 
-    const signUpNameInput = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.INPUTS.signUpNameInput);
-    const signUpPasswordInput = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.INPUTS.signUpPasswordInput);
+    const signUpNameInput = document.getElementById(configRegistry.WIDGETS.INPUTS.signUpNameInput);
+    const signUpPasswordInput = document.getElementById(configRegistry.WIDGETS.INPUTS.signUpPasswordInput);
 
-    const setStudentStatusButton = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.BUTTONS.setStudentStatusButton);
-    const setTeacherStatusButton = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.BUTTONS.setTeacherStatusButton);
-    const signUpButton = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.BUTTONS.signUpButton);
+    const setStudentStatusButton = document.getElementById(configRegistry.WIDGETS.BUTTONS.setStudentStatusButton);
+    const setTeacherStatusButton = document.getElementById(configRegistry.WIDGETS.BUTTONS.setTeacherStatusButton);
+    const signUpButton = document.getElementById(configRegistry.WIDGETS.BUTTONS.signUpButton);
 
     setStudentStatusButton.addEventListener("click", function() {
-        status = configRegistry.AUTH.USER_STATUS.student;
+        status = configRegistry.AUTHENTICATION.USER_STATUS.student;
     });
 
     setTeacherStatusButton.addEventListener("click", function() {
-        status = configRegistry.AUTH.USER_STATUS.teacher;
+        status = configRegistry.AUTHENTICATION.USER_STATUS.teacher;
     });
 
     signUpButton.addEventListener("click", function() {
@@ -33,7 +33,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 headers: configRegistry.HEADERS.contentTypeApplicationJSON,
                 method: configRegistry.METHODS.POST,
                 body: JSON.stringify({
-                    auth_type: configRegistry.AUTH.TYPE.sign_up,
+                    endpoint: configRegistry.ENDPOINTS.signUpEndpoint,
                     file_path: configRegistry.DATABASE.users,
                     user_input_data: {
                         name: signUpNameValue || null,
@@ -45,8 +45,6 @@ document.addEventListener("DOMContentLoaded", function() {
             })
             .then(response => response.json())
             .then(responseData => {
-                const userId = responseData.user_id;
-                const userStatus = responseData.user_status;
 
                 window.location.href = configRegistry.ENDPOINTS.methodologicEndpoint;
             })

@@ -1,15 +1,25 @@
 from enum import Enum
-from database.db_crud import db
+from database.database import db
 from typing import Any
 
-auth_registry: dict[str, dict[str, Any]] = {
-    "sign_up": {
-        "read_primary_key": db.read_primary_key,
-        "create_data_in_database_file": db.create_data_in_database_file,
+endpoint_database_router: dict[str, dict[str, Any]] = {
+    "/sign_up": {
+        "GET": {
+            "read_data_from_dataase_file": db.read_data_from_database_file,
+        },
+        "POST": {
+            "read_primary_key": db.read_primary_key,
+            "create_data_in_database_file": db.create_data_in_database_file,
+        },
     },
 
-    "log_in": {
-        "read_data_from_database_file": db.read_data_from_database_file,
+    "/log_in": {
+        "GET": {
+            "read_data_from_database_file": db.read_data_from_database_file,
+        },
+        "POST": {
+            "read_data_from_database_file": db.read_data_from_database_file,
+        },
     },
 }
 
@@ -27,6 +37,10 @@ class Endpoints(Enum):
     INDUSTRIAL_ROBOTICS = "/industrial_robotics"
 
     PROFILE = "/profile"
+    UPDATE_PROFILE = "/update_profile"
+    DELETE_PROFILE = "/delete_profile"
+
+    ABOUT = "/about"
 
 class Templates(Enum):
     INDEX = "index.html"
@@ -34,6 +48,11 @@ class Templates(Enum):
     PROFILE = "profile.html"
     
     INDUSTRIAL_ROBOTICS = "methodologic/industrial_robotics.html"
+
+    ABOUT = "about.html"
+
+class Path(Enum):
+    USERS = "database/users.json"
 
 class User:
     def __init__(self, *,
@@ -47,12 +66,3 @@ class User:
         self.password: str | None = password
         self.status: str | None = status
         self.unique_id: str | None = unique_id
-
-class Lesson:
-    def __init__(self, *,
-                 topic: str | None,
-                 info: str | None,
-                 ) -> None:
-        
-        self.topic: str | None = topic
-        self.info: str | None = info

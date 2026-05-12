@@ -2,11 +2,11 @@ import { configRegistry } from "/static/js/config.js";
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    const logInIdInput = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.INPUTS.logInIdInput);
-    const logInNameInput = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.INPUTS.logInNameInput);
-    const logInPasswordInput = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.INPUTS.logInPasswordInput);
+    const logInIdInput = document.getElementById(configRegistry.WIDGETS.INPUTS.logInIdInput);
+    const logInNameInput = document.getElementById(configRegistry.WIDGETS.INPUTS.logInNameInput);
+    const logInPasswordInput = document.getElementById(configRegistry.WIDGETS.INPUTS.logInPasswordInput);
 
-    const logInButton = document.getElementById(configRegistry.WIDGETS.INDEX_PAGE.BUTTONS.logInButton);
+    const logInButton = document.getElementById(configRegistry.WIDGETS.BUTTONS.logInButton);
 
     logInButton.addEventListener("click", function() {
 
@@ -23,13 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 headers: configRegistry.HEADERS.contentTypeApplicationJSON,
                 method: configRegistry.METHODS.POST,
                 body: JSON.stringify({
-                    auth_type: configRegistry.AUTH.TYPE.log_in,
+                    endpoint: configRegistry.ENDPOINTS.logInEndpoint,
                     file_path: configRegistry.DATABASE.users,
                     user_input_data: {
                         name: logInNameValue || null,
                         password: logInPasswordValue || null,
                         status: null,
-                        unique_id: logInIdValue,
+                        unique_id: logInIdValue || null,
                     }
                 })
             })
@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 else
                 {
-                    alert(configRegistry.MESSAGES.userNotFoundAlertMessage);
+                    alert(configRegistry.TEXTCONSTANTS.userNotFoundAlertMessage);
                 };
 
             });

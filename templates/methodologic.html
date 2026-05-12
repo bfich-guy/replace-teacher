@@ -1,25 +1,31 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Методическая информация для учителей | Замена учителя</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/methodologic.css') }}">
+        <title>Главная | Замена учителя</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/quantorium.css') }}">
     </head>
     <body>
-        <header class="quantorium-header">
-            <img src="{{ url_for('static', filename='images/QuantoriumLogo.png') }}" alt="QuantoriumLogo" width="200">
+        <header class="quantorium-header quantorium-theme">
+            <ul class="quantorium-widget-list quantorium-widget-horizontal-menu">
+                <li><button class="quantorium-button" id="profile-redirect-button">Профиль</button></li>
+                <li><button class="quantorium-button" id="about-redirect-button">О нас</button></li>
+            </ul>
         </header>
-        <main>
-            <div class="quantorium-methodologic-information-container">
-                <div class="quantum-methodologic-information-container">
-                    <p class="methodologic-header"><strong>Промробоквантум</strong></p>
-                    <button id="industrial-robotics-redirect-button" class="quantorium-button">Методическая информация</button>
-                </div>
+        <main class="quantorium-main quantorium-theme">
+            <div>
+                <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>Промробоквантум</strong></p>
+                <ul class="quantorium-widget-list">
+                    <li><button class="quantorium-button" id="industrial-robotics-redirect-button" >Методическая информация</button></li>
+                </ul>
             </div>
         </main>
-        <footer class="quantorium-footer">
-            <p>Наша почта: vage09inboxru@mail.ru</p>
+        <footer class="quantorium-footer quantorium-theme">
+            <ul class="quantorium-widget-list">
+                <li><p class="quantorium-info-textlabel quantorium-centralized-textlabel">Наша почта на Mail.ru: vage09inboxru@mail.ru</p></li>
+            </ul>
         </footer>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/Profile.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/About.js') }}"></script>
         <script type="module" src="{{ url_for('static', filename='js/Redirect/IndustrialRobotics.js') }}"></script>
     </body>
 </html>

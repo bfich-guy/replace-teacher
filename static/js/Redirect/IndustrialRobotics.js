@@ -1,12 +1,9 @@
 import { configRegistry } from "/static/js/config.js";
+import { redirectToEndpoint } from "/static/js/utils.js";
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    const industrialRoboticsRedirectButton = document.getElementById(configRegistry.WIDGETS.METHODOLOGIC_PAGE.BUTTONS.industrialRoboticsRedirectButton);
+    const industrialRoboticsRedirectButton = document.getElementById(configRegistry.WIDGETS.BUTTONS.industrialRoboticsRedirectButton);
 
-    industrialRoboticsRedirectButton.addEventListener("click", function() {
-
-        window.location.href = configRegistry.ENDPOINTS.industrialRoboticsEndpoint;
-
-    })
+    redirectToEndpoint({button: industrialRoboticsRedirectButton, endpoint: configRegistry.ENDPOINTS.industrialRoboticsEndpoint});
 })

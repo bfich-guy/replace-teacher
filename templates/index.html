@@ -2,42 +2,43 @@
 <html>
     <head>
         <title>Аутентификация | Замена учителя </title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/quantorium.css') }}">
     </head>
     <body>
-        <header class="quantorium-header">
-            <img src="{{ url_for('static', filename='images/QuantoriumLogo.png') }}" alt="QuantoriumLogo" width="200">
+        <header class="quantorium-header quantorium-theme">
+            <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>Замена учителя</strong></p>
         </header>
-        <main>
-            <div class="authentication">
-                <p><strong>Регистрация</strong></p>
-                <ul class="auth-list">
-                    <li><input type="text" id="sign-up-name-input" placeholder="Name"></li>
-                    <li><input type="text" id="sign-up-password-input" placeholder="Password"></li>
+        <main class="quantorium-main quantorium-theme">
+            <div>
+                <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>Регистрация</strong></p>
+                <ul class="quantorium-widget-list quantorium-centralized-textlabel">
+                    <li><input class="quantorium-input" id="sign-up-name-input" placeholder="Имя"></li>
+                    <li><input class="quantorium-input" id="sign-up-password-input" placeholder="Пароль"></li>
                 </ul>
-                <ul class="user-status-ul">
+                <ul class="quantorium-widget-list quantorium-widget-horizontal-menu">
                     <li><button class="quantorium-button" id="set-student-status-button">Ученик</button></li>
                     <li><button class="quantorium-button" id="set-teacher-status-button">Учитель</button></li>
                 </ul>
-                <ul>
+                <ul class="quantorium-widget-list quantorium-widget-horizontal-menu">
                     <li><button class="quantorium-button" id="sign-up-button">Зарегистрироваться</button></li>
                 </ul>
             </div>
-            <div class="authentication">
-                <p><strong>Вход</strong></p>
-                <ul class="auth-list">
-                    <li><input type="text" id="log-in-id-input" placeholder="ID"></li>
-                    <li><input type="text" id="log-in-name-input" placeholder="Name"></li>
-                    <li><input type="text" id="log-in-password-input" placeholder="Password"></li>
+            <div>
+                <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>Войти</strong></p>
+                <ul class="quantorium-widget-list quantorium-centralized-textlabel">
+                    <li><input class="quantorium-input" id="log-in-id-input" placeholder="ID"></li>
+                    <li><input class="quantorium-input" id="log-in-name-input" placeholder="Имя"></li>
+                    <li><input class="quantorium-input" id="log-in-password-input" placeholder="Пароль"></li>
                 </ul>
-                <ul>
+                <ul class="quantorium-widget-list quantorium-widget-horizontal-menu">
                     <li><button class="quantorium-button" id="log-in-button">Войти</button></li>
                 </ul>
             </div>
         </main>
-        <footer class="quantorium-footer">
-            <p>Наша почта: vage09inboxru@mail.ru</p>
+        <footer class="quantorium-footer quantorium-theme">
+            <ul class="quantorium-widget-list">
+                <li><p class="quantorium-info-textlabel quantorium-centralized-textlabel">Наша почта на Mail.ru: vage09inboxru@mail.ru</p></li>
+            </ul>
         </footer>
         <script type="module" src="{{ url_for('static', filename='js/Authentication/SignUp.js') }}"></script>
         <script type="module" src="{{ url_for('static', filename='js/Authentication/LogIn.js') }}"></script>

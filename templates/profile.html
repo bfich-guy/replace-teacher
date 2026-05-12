@@ -2,29 +2,45 @@
 <html>
     <head>
         <title>Профиль | Замена учителя</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/quantorium.css') }}">
     </head>
     <body>
-        <header class="quantorium-header">
-            <img src="{{ url_for('static', filename='images/QuantoriumLogo.png') }}" alt="QuantoriumLogo" width="200">
+        <header class="quantorium-header quantorium-theme">
+            <ul class="quantorium-widget-list quantorium-widget-horizontal-menu">
+                <li><button class="quantorium-button" id="methodologic-redirect-button">На главную</button></li>
+                <li><button class="quantorium-button" id="about-redirect-button">О нас</button></li>
+            </ul>
         </header>
-        <main>
-            <div class="user-profile">
-                <ul class="user-profile-data-list">
-                    <li><p class="user-profile-info">Имя: </p></li>
-                    <li><p class="user-profile-info">Статус: </p></li>
-                    <li><p class="user-profile-info">ID: </p></li>
+        <main class="quantorium-main quantorium-theme">
+            <div>
+                <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>Ваш профиль</strong></p>
+                <ul class="quantorium-widget-list">
+                    <li><p class="quantorium-info-textlabel" id="user-current-name" class="quantorium-textlabel">Имя: </p></li>
+                    <li><p class="quantorium-info-textlabel" id="user-current-status" class="quantorium-textlabel">Статус: </p></li>
+                    <li><p class="quantorium-info-textlabel" id="user-current-id" class="quantorium-textlabel">ID: </p></li>
                 </ul>
             </div>
-            <div class="user-profile">
-                <ul class="user-profile-buttons">
-                    <li><button class="user-profile-button" id="user-profile-update-button">Обновить профиль</button></li>
-                    <li><button class="user-profile-button" id="user-profile-delete-button">Удалить профиль</button></li>
+            <div>
+                <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>Обновить профиль</strong></p>
+                <ul class="quantorium-widget-list quantorium-widget-centralized-menu">
+                    <li><input id="user-new-name" class="quantorium-input" placeholder="Новое имя"></input></li>
+                    <li><input id="user-new-password" class="quantorium-input" placeholder="Новый пароль"></input></li>
+                </ul>
+                <p class="quantorium-info-textlabel quantorium-centralized-textlabel">Рекомендуем вводить надежный пароль. Избегайте вариантов 1234 или ABCD в целях Вашей же безопасности. Мы стреимся к защите Ваших персональных данных</p>
+                <ul class="quantorium-widget-list quantorium-widget-horizontal-menu">
+                    <li><button class="quantorium-button" id="profile-update-button">Обновить профиль</button></li>
+                    <li><button class="quantorium-button" id="profile-delete-button">Удалить профиль</button></li>
                 </ul>
             </div>
         </main>
-        <footer class="quantorium-footer">
-            <p>Наша почта: vage09inboxru@mail.ru</p>
+        <footer class="quantorium-footer quantorium-theme">
+            <ul class="quantorium-widget-list">
+                <li><p class="quantorium-info-textlabel quantorium-centralized-textlabel">Наша почта на Mail.ru: vage09inboxru@mail.ru</p></li>
+            </ul>
         </footer>
+        <script type="module" src="{{ url_for('static', filename='js/Profile/SignUpSet.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/Profille/LogInSet.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/Methodologic.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/About.js') }}"></script>
     </body>
 </html>

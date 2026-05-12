@@ -1,0 +1,80 @@
+/* Layout */
+
+.quantorium-header,
+.quantorium-main,
+.quantorium-footer {
+    border: 8px solid darkblue;
+    border-radius: 16px;
+}
+
+/* Widgets */
+
+.quantorium-widget-horizontal-menu {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 8px;
+}
+
+.quantorium-widget-centralized-menu {
+    text-align: center;
+}
+
+.quantorium-widget-list {
+    list-style-type: none;
+}
+
+.quantorium-centralized-widget-list {
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+
+/* Buttons */
+
+.quantorium-button {
+    border: 8px solid darkblue;
+    border-radius: 16px;
+    font-size: 32px;
+    color: whitesmoke;
+    background-color: blue;
+}
+
+.quantorium-button:hover {
+    scale: 1.2;
+    cursor: pointer;
+    border-color: green;
+    background-color: yellowgreen;
+}
+
+.quantorium-button:active {
+    scale: 1.0;
+}
+
+/* Inputs */
+
+.quantorium-input {
+    font-size: 32px;
+}
+
+/* Textlabels */
+
+.quantorium-info-textlabel {
+    font-family: Arial;
+    font-size: 32px;
+    color: blue;
+    text-shadow: 2px 2px 4px lightgray;
+}
+
+.quantorium-centralized-textlabel {
+    text-align: center;
+}
+
+/* Theme */
+
+.quantorium-theme {
+    background-color: whitesmoke;
+}

@@ -2,20 +2,26 @@
 <html>
     <head>
         <title>Промробоквантум: методическая информация | Замена учителя</title>
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
-        <link rel="stylesheet" href="{{ url_for('static', filename='css/methodologic.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/quantorium.css') }}">
     </head>
     <body>
-        <header class="quantum-header">
-            <img src="{{ url_for('static', filename='images/IndustrialRoboticsQuantumLogo.png') }}" alt="IndustrialRoboticsQuantumLogo" width="200">
+        <header class="quantorium-header quantorium-theme">
+            <ul class="quantorium-widget-list quantorium-widget-horizontal-menu">
+                <li><button class="quantorium-button" id="methodologic-redirect-button">На главную</button></li>
+                <li><button class="quantorium-button" id="profile-redirect-button">Профиль</button></li>
+                <li><button class="quantorium-button" id="about-redirect-button">О нас</button></li>
+            </ul> 
         </header>
-        <main>
-            <div class="methodologic-information">
-                
-            </div>
+        <main class="quantorium-main quantorium-theme">
+            
         </main>
-        <footer class="quantorium-footer">
-            <p>Наша почта: vage09inboxru@mail.ru</p>
+        <footer class="quantorium-footer quantorium-theme">
+            <ul class="quantorium-widget-list">
+                <li><p class="quantorium-info-textlabel quantorium-centralized-textlabel">Наша почта на Mail.ru: vage09inboxru@mail.ru</p></li>
+            </ul>
         </footer>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/Methodologic.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/Profile.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/About.js') }}"></script>
     </body>
 </html>

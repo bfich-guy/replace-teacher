@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>О нас | Замена учителя</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/quantorium.css') }}">
+    </head>
+    <body>
+        <header class="quantorium-header quantorium-theme">
+            <ul class="quantorium-widget-list quantorium-widget-horizontal-menu">
+                <li><button class="quantorium-button" id="methodologic-redirect-button">На главную</button></li>
+                <li><button class="quantorium-button" id="profile-redirect-button">Профиль</button></li>
+            </ul>
+        </header>
+        <main class="quantorium-main quantorium-theme">
+            <div class="about-information-container">
+                <ul class="quantorium-widget-list">
+                    <li>
+                        <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>Информация о нас</strong></p>
+                        <p class="quantorium-info-textlabel">Замена учителя - это проект, позволяющий заместителю учителя, не знающему контекста, провести урок</p>
+                    </li>
+                    <li>
+                        <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>Проблема</strong></p>
+                        <p class="quantorium-info-textlabel">Заместитель учителя не знает, что и как именно преподавать ученикам, но ему нужно это сделать</p>
+                    </li>
+                    <li>
+                        <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>Решение</strong></p>
+                        <p class="quantorium-info-textlabel">Создать сайт, где будет методическая информация на такие случаи специально для заместителей учителя Кванториума</p>
+                    </li>
+                    <li>
+                        <p class="quantorium-info-textlabel quantorium-centralized-textlabel"><strong>УТП (Почему именно МЫ?)</strong></p>
+                        <p class="quantorium-info-textlabel">Наш сайт создан специально для Кванториума, поэтому информация будет конкретной и точной, а следовательно, заместитель учителя точно будет знать, что именно ему преподавать. Мы предлагаем не саму информацию, а скорость, доступность и эффективность</p>
+                    </li>
+                </ul>
+            </div>
+        </main>
+        <footer class="quantorium-footer quantorium-theme">
+            <ul class="quantorium-widget-list">
+                <li><p class="quantorium-info-textlabel quantorium-centralized-textlabel">Наша почта на Mail.ru: vage09inboxru@mail.ru</p></li>
+            </ul>
+        </footer>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/Methodologic.js') }}"></script>
+        <script type="module" src="{{ url_for('static', filename='js/Redirect/Profile.js') }}"></script>
+    </body>
+</html>
