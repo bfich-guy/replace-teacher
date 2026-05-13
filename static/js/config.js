@@ -1,42 +1,46 @@
 export const configRegistry = {
     AUTHENTICATION: 
     {
+
         USER_STATUS: 
         {
+
             student: "Ученик",
             teacher: "Учитель",
+
         },
 
-    },
 
-    DATABASE: 
-    {
-        users: "database/users.json",
-        lessons: "database/lessons.json"
     },
 
     ENDPOINTS: 
     {
+
         indexEndpoint: "/",
         signUpEndpoint: "/sign_up",
         logInEndpoint: "/log_in",
-        methodologicEndpoint: "/methodologic",
+        mainEndpoint: "/main",
         industrialRoboticsEndpoint: "/industrial_robotics",
         profileEndpoint: "/profile",
         updateProfileEndpoint: "/update_profile",
         deleteProfileEndpoint: "/delete_profile",
         aboutEndpoint: "/about",
+
     },
 
     HEADERS: 
     {
+
         contentTypeApplicationJSON: {"Content-type": "application/json"},
+
     },
 
     METHODS: 
     {
+
         GET: "GET",
         POST: "POST",
+
     },
 
     WIDGETS: 
@@ -57,7 +61,7 @@ export const configRegistry = {
             profileDeleteButton: "profile-delete-button",
             aboutRedirectButton: "about-redirect-button",
 
-            methodologicRedirectButton: "methodologic-redirect-button",
+            mainRedirectButton: "main-redirect-button",
             
         },
 
@@ -69,6 +73,8 @@ export const configRegistry = {
             logInIdInput: "log-in-id-input",
             logInNameInput: "log-in-name-input",
             logInPasswordInput: "log-in-password-input",
+            userNewNameInput: "user-new-name-input",
+            userNewPasswordInput: "user-new-password-input",
 
         },
 
@@ -79,9 +85,8 @@ export const configRegistry = {
             userStatus: "user-status",
             userCurrentName: "user-current-name",
             userCurrentStatus: "user-current-status",
-            userCurrentId: "user-current-id",   
-            userNewName: "user-new-name",
-            userNewPassword: "user-new-password",
+            userCurrentId: "user-current-id",
+            profileInfo: "profile-info",
 
         },
 
@@ -89,16 +94,23 @@ export const configRegistry = {
 
     TEXTCONSTANTS: 
     {
+
         userNotFoundAlertMessage: "Данного пользователя не существует, зарегистрируйтесь!",
         userName: "Имя: ",
         userStatus: "Статус: ",
         userId: "ID: ",
+        successfullyUpdatedProfileMessage: "Профиль успешно обновлен!",
+        userProfileDataArray: ["Имя: ", "Статус: ", "ID: "],
+
     },
 
     STATUS_CODES: 
     {
+
         success: "success",
-        forbidden: "forbidden"
+        notAuthorized: "not_authorized",
+        forbidden: "forbidden",
+
     },
 
 }

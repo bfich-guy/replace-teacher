@@ -1,4 +1,5 @@
 import { configRegistry } from "/static/js/config.js";
+import { redirectToEndpoint } from "/static/js/utils.js";
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -23,8 +24,6 @@ document.addEventListener("DOMContentLoaded", function() {
                 headers: configRegistry.HEADERS.contentTypeApplicationJSON,
                 method: configRegistry.METHODS.POST,
                 body: JSON.stringify({
-                    endpoint: configRegistry.ENDPOINTS.logInEndpoint,
-                    file_path: configRegistry.DATABASE.users,
                     user_input_data: {
                         name: logInNameValue || null,
                         password: logInPasswordValue || null,
@@ -40,7 +39,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
                 if (statusCodeIsSuccess) 
                 {
-                    window.location.href = configRegistry.ENDPOINTS.methodologicEndpoint;
+                    redirectToEndpoint({endpoint: configRegistry.ENDPOINTS.mainEndpoint});
+                    //window.location.href = configRegistry.ENDPOINTS.mainEndpoint;
                 }
                 else
                 {

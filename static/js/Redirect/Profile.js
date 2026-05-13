@@ -5,5 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const profileRedirectButton = document.getElementById(configRegistry.WIDGETS.BUTTONS.profileRedirectButton);
 
-    redirectToEndpoint({button: profileRedirectButton, endpoint: configRegistry.ENDPOINTS.profileEndpoint})
+    profileRedirectButton.addEventListener("click", function() {
+        redirectToEndpoint({endpoint: configRegistry.ENDPOINTS.profileEndpoint});
+    });
+
 })

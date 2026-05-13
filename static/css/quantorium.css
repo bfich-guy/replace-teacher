@@ -4,7 +4,6 @@
 .quantorium-main,
 .quantorium-footer {
     border: 8px solid darkblue;
-    border-radius: 16px;
 }
 
 /* Widgets */
@@ -31,7 +30,6 @@
     flex-direction: column;
     justify-content: center;
 }
-
 
 /* Buttons */
 

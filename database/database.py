@@ -1,7 +1,15 @@
 from json import load, dump, JSONDecodeError
 from typing import Any
 from pathlib import Path
-from .database_config import database_config_registry
+
+database_config_registry: dict = {
+    "reading_mode": "r",
+    "writing_mode": "w",
+    "encoding": "utf-8",
+    "indent": 4,
+    "ensure_ascii": False,
+    "metadata_file_path": "database/metadata.json",
+}
 
 class DataBase:
     def __init__(self, *, 
@@ -215,7 +223,7 @@ class DataBase:
         """
         **Returns data** from JSON database file that stored by ID (primary key). 
 
-        **FileNotFoundError** and **JSONDecodeError** are already **handed** and if the error happened, function **returns None**. 
+        **FileNotFoundError**, **JSONDecodeError** and **KeyError** are already **handed** and if the error happened, function **returns None**. 
         """
 
         file_content: dict | None = self.read_database_file(file_path=file_path)
@@ -233,12 +241,12 @@ class DataBase:
                                      file_path: str,
                                      data: dict,
                                      data_id: str,
-                                     ) -> None:
+                                     ) -> dict | None:
         
         """
         **Rewrites data** in JSON database file and **returns None**. 
         
-        **FileNotFoundError**, **JSONDecodeError** are **handed**. 
+        **FileNotFoundError**, **JSONDecodeError**, and **KeyError** are **handed** and if the error happened, function **returns None**. 
         """
     
         file_content: dict | None = self.read_database_file(file_path=file_path)
@@ -246,9 +254,12 @@ class DataBase:
         if file_content is None:
             return None
         
-        file_content[data_id] = data
-
-        self.update_database_file(file_path=file_path, update_data=file_content)
+        try:
+            file_content[data_id] = data
+            self.update_database_file(file_path=file_path, update_data=file_content)
+            return file_content[data_id]
+        except KeyError:
+            return None
 
     def delete_data_from_database_file(self, *,
                                        file_path: str,
@@ -261,7 +272,7 @@ class DataBase:
         
         **NOT RECOMMENDED** to use! 
 
-        **FileNotFoundError**, **JSONDecodeError**, **KeyError** are **handed**. 
+        **FileNotFoundError**, **JSONDecodeError**, **KeyError** are **handed** and if the error happened, function **returns None**. 
         """
 
         file_content: dict | None = self.read_database_file(file_path=file_path)

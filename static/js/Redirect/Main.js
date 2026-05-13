@@ -3,10 +3,10 @@ import { redirectToEndpoint } from "/static/js/utils.js";
 
 document.addEventListener("DOMContentLoaded", function() {
 
-    const industrialRoboticsRedirectButton = document.getElementById(configRegistry.WIDGETS.BUTTONS.industrialRoboticsRedirectButton);
+    const mainRedirectButton = document.getElementById(configRegistry.WIDGETS.BUTTONS.mainRedirectButton);
 
-    industrialRoboticsRedirectButton.addEventListener("click", function() {
+    mainRedirectButton.addEventListener("click", function() {
         redirectToEndpoint({endpoint: configRegistry.ENDPOINTS.aboutEndpoint});
     });
-    
+
 })

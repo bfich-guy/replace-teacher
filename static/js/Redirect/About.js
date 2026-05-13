@@ -5,6 +5,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
     const aboutRedirectButton = document.getElementById(configRegistry.WIDGETS.BUTTONS.aboutRedirectButton);
 
-    redirectToEndpoint({button: aboutRedirectButton, endpoint: configRegistry.ENDPOINTS.aboutEndpoint});
+    aboutRedirectButton.addEventListener("click", function() {
+        redirectToEndpoint({endpoint: configRegistry.ENDPOINTS.aboutEndpoint});
+    });
 
 })
